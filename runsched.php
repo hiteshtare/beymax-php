@@ -16,10 +16,10 @@
 	//$param = 'lights on';
 
 	//create rfCode 
-	$rfCode = $operation . "," . $param;
+	$rfCode = $operation . ',' . $param;
 
 	//create rfScript
-	$rfScript = $rfPath . "'" . $rfCode . "'";
+	$rfScript = $rfPath . '"' . $rfCode . '"';
 
 	//execute rfScript
 	$result = shell_exec($rfScript);
@@ -29,15 +29,15 @@
 	
 	//extract flag and msg from resultData
 	$obj = new stdClass();
-	$obj->flag=$resultData["flag"];
-	$obj->msg=$resultData["msg"];
+	$obj->flag=$resultData['flag'];
+	$obj->msg=$resultData['msg'];
 
 	//echo json_encode($obj); //print obj
-	printResult($resultData["flag"],$resultData["msg"]); 
+	printResult($resultData['flag'],$resultData['msg']); 
 	}	 
 catch (Exception $e) 
 {
-  printResult(0,"FAILURE >> General Error: ".$e->getMessage()); 
+  printResult(0,'FAILURE >> General Error: '.$e->getMessage()); 
 }
 
 ?>

@@ -24,14 +24,14 @@ try
 	
 	//extract flag and msg from resultData
 	$obj = new stdClass();
-	$obj->flag=$resultData["flag"];
-	$obj->msg=$resultData["msg"];
+	$obj->flag=$resultData['flag'];
+	$obj->msg=$resultData['msg'];
 
 	echo json_encode($obj); //print obj
 }	 
 catch (Exception $e) 
 {
-  echo "General Error: <br>".$e->getMessage();
+  echo 'General Error: <br>'.$e->getMessage();
 }
 
 ?>
